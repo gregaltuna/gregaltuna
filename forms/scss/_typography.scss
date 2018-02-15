@@ -1,0 +1,207 @@
+// Google fonts
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Open+Sans+Condensed:300,700|Oswald:400,700);
+//@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Open+Sans+Condensed:300,700);
+
+$copy:		$open;
+$headers:	$open;
+
+// Styles
+html {
+	font-size: 16px;
+}
+
+/* ------------------------------------------------------------------------------------------------ [ TYPOGRAPHY ] ----- */
+body {
+  line-height: 1em;
+  letter-spacing: normal;
+  font-family: $copy;
+
+	@include mobile {
+		@include font-size(14px);
+	}
+	
+	@include narrow {
+		@include font-size(14px);
+	}
+	
+	@include normal {
+		@include font-size(15px);
+	}
+	
+	@include wide {
+		@include font-size(16px);
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $black;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  margin: 0;
+}
+
+h1, h2, h3 {
+	line-height: 1.15em;
+	font-family: $headers;
+}
+
+h4, h5, h6 {
+	font-family: $copy;
+}
+
+h1 {
+	@include font-size(44px);
+}
+
+h2 {
+	@include font-size(32px);
+	margin-bottom: .25em;
+}
+
+h3 {
+	@include font-size(26px);
+}
+
+h4 {
+	@include font-size(22px);
+}
+
+h5 {
+	@include font-size(18px);
+}
+
+h6 {
+	@include font-size(16px);
+}
+
+p {
+	color: $black;
+	@include font-size(16px);
+	margin-bottom: 1.25em;
+	line-height: 2em;
+	text-rendering: optimizeLegibility;
+}
+
+ul, ol {
+  padding-left: 25px;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+	line-height: 1.35em;
+	margin: 0 0 .75em 0;
+	font-size: .9375em;
+	list-style: disc;
+	
+	.smaller & {
+		font-size: .9em !important;
+		line-height: 1.5em;
+	}
+}
+
+b, strong, em, small, code {
+  line-height: 1em;
+}
+
+sup {
+  vertical-align: super;
+  font-size: .9em;
+  position: relative;
+}
+
+sub {
+  vertical-align: baseline;
+  position: relative;
+}
+
+.title {
+	margin-top: 0;
+}
+
+.thick {
+	font-weight: bolder;
+}
+
+/* ------------------------------------------------------------------------------------------------ [ OTHER TYPO ] ----- */
+#{$a-tags} {
+	color: $dark-green;
+}
+
+#{$a-tags-hover} {
+	color: $black;
+	text-decoration: underline;
+}
+
+.caps { text-transform: uppercase; }
+
+.center { text-align: center; }
+
+.bold {
+	font-weight: 700;
+	letter-spacing: .025em;
+}
+
+.red-star {
+	font-family: $copy;
+	font-weight: normal;
+	color: #c00;
+}
+
+.tooltip {
+	border: dashed 1px #ccc;
+	border-width: 0 0 1px 0;
+	background: #fbfbe5;
+	padding: 2px 0;
+	position: relative;
+}
+
+.tooltip span {
+	display: none;
+	position: absolute;
+	top: 125%;
+	background: #fbfbe5;
+	font-size: .8em;
+	line-height: 1.35em;
+}
+
+.tooltip:hover {
+	cursor: hand !important;
+}
+
+.tooltip:hover span,
+.tooltip:focus span {
+	display: block;
+	width: 250px;
+	padding: 10px;
+	z-index: 1000;
+}
+
+.caption,
+.table-notes {
+	font-size: .7em;
+	line-height: 1.35em;
+	margin: -15px 0 10px 0;
+	color: #999;
+	font-style: italic;
+}
+
+.caption {
+	margin: 3px 0 0 0;
+}
+
+.video .caption {
+	margin: 18px 0 0 -7px;
+}
+
+.border {
+	border: solid 3px #eee;
+}
+
+.no-border {
+	border: none !important;
+}

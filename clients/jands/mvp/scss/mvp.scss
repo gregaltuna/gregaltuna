@@ -1,0 +1,283 @@
+@import 'bourbon';
+@import 'variables';
+@import 'mixins';
+@import 'grid';
+@import 'typography';
+
+body {
+	text-transform: uppercase;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: url(../images/background-fw.jpg) center center no-repeat #000;
+	background-size: cover;
+	
+	@media (max-width:767px) {
+		background: url(../images/background-mobile.jpg) bottom center no-repeat #000;
+		background-size: inherit;
+	}
+}
+
+// GRID OVERRIDES
+.section {
+	height: auto;	
+
+	.box {
+
+		.row {
+			padding: 0;
+			height: 100vh;
+			
+			@media (max-width:767px) {
+				height: auto;
+			}
+			
+			.col {
+				height: 100%;
+				text-align: center;
+				position: relative;
+				
+				@media (max-width:767px) {
+					height: auto;
+				}
+				
+				img {
+					margin: 0 auto;
+				}
+				
+				&.content {
+					.inside {
+						width: 100%;
+						@include relativecenter;
+						
+						@media (max-width:767px) {
+							@include centerCancel;
+						}				
+					}
+				}
+			}
+		}
+	}
+}
+
+// LAYOUT
+h1 {
+	margin: 0;
+	padding: 0 0 2px 0;
+	line-height: 1em;
+	position: relative;
+	display: inline-block;
+	border: solid 2px $brown;
+	border-width: 2px 0;
+	
+	&::before {
+		color: $brown;
+		content: "\f005";
+		font-size: 18px;
+		font-family: $fontawesome;
+		@include center($xy:y);
+		position: absolute;
+		left: -25px;
+	}
+
+	&::after {
+		color: $brown;
+		content: "\f005";
+		font-size: 18px;
+		font-family: $fontawesome;
+		@include center($xy:y);
+		position: absolute;
+		right: -25px;
+	}
+}
+
+.introducing {
+	color: $gold;
+	margin: 1.25em 0 .65em 0;
+	@include font-size(19px);
+	line-height: 1em;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-family: $michroma;
+  
+  span {
+	  padding: 0 .65em;
+  }
+  
+  @media (max-width:369px) {
+	  @include font-size(16px);
+	  letter-spacing: normal;
+  }
+}
+
+.arriving {
+	color: $gold;
+	margin: 0 0 3.5em 0;
+	@include font-size(16px);
+	line-height: 1em;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-family: $michroma;
+}
+
+.details {
+	color: #ccc;
+	margin: 0 0 .5em 0;
+	@include font-size(23px);
+	line-height: 1em;
+	font-weight: normal;
+	letter-spacing: 1px;
+  font-family: $open-condensed;
+  
+  span {
+	  display: inline-block;
+	  width: 40px;
+	  position: relative;
+	  height: 16px;
+  }
+  
+  i.fa {
+	  color: $brown;
+	  @include font-size(12px);
+	  position: absolute;
+	  @include center($xy:xy);
+  }
+
+  @media (max-width:320px) {
+	  letter-spacing: normal;
+  }
+}
+
+.tagline {
+	color: $gold;
+	margin: 0 0 3.5em 0;
+	line-height: 1em;
+	@include font-size(14px);
+	font-weight: 100;
+	letter-spacing: 1px;
+	font-family: $michroma;	
+}
+
+.contact {
+	color: $gold;
+	margin: 0 0 1.25em 0;
+	@include font-size(14px);
+	line-height: 1.75em;
+	font-weight: 100;
+  font-family: $michroma;
+  
+  #{$a-tags} {
+	  color: #ccc;
+	  font-family: $michroma;
+	  text-decoration: none;
+  }
+
+  #{$a-tags-hover} {
+	  color: #fff;
+	  text-decoration: underline;
+  }
+}
+
+.trademark {
+	font-size: .6em;
+	vertical-align: text-top;
+	
+	.introducing & {
+		margin-left: -10px;
+	}
+}
+
+.social-icon {
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	margin: 0 7px;
+	color: #fff;
+	
+	@media (max-width:767px) {
+		width: 40px;
+		height: 40px;
+	}
+	
+	i.fa {
+		font-size: 22px;
+		line-height: 34px;
+		
+		@media (max-width:767px) {
+			font-size: 30px;
+			line-height: 42px;
+		}
+	}
+	
+	&.facebook {
+		background: $facebook;
+	}
+	
+	&.twitter {
+		background: $twitter;
+	}
+	
+	#{$a-tags} {
+		height: 40px;
+		width: 40px;
+	}
+
+	#{$a-tags-hover} {
+		color: #fff;
+	}
+}
+
+.legal {
+	bottom: 10px;
+	right: 0;
+	padding-right: 20px;
+	@include font-size(10px);
+	position: fixed;
+	
+	p {
+		margin: 0;
+		text-transform: none;
+		color: #7e7e7e;
+		font-family: Helvetica, sans-serif;
+		font-weight: normal;
+	}
+	
+	@media (max-width:767px) {
+		bottom: 0px;
+		text-align: center;
+		right: auto;
+		width: 100%;
+		background: #000;
+		height: 20px;
+	}
+}
+
+.mobile-footer-fade {
+	display: none;
+	height: 0px;
+	width: 0px;
+
+	@media (max-width:767px) {
+		height: 29px;
+		width: 100%;
+		background: url(../images/mobile-footer-fade.png) bottom left repeat-x;
+		position: absolute;
+		bottom: 20px;
+	}
+}
+
+.mobile.mvp-logo {
+	padding: 5em 0 4em 0;
+}
+
+.bottle-mobile {
+	margin-top: 3em;
+}
+
+.mobile {
+	display: none;
+	
+	@media (max-width:767px) {
+		display: block !important;
+	}
+}

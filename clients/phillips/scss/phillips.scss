@@ -1,0 +1,378 @@
+//@import 'bourbon';
+@import 'variables';
+@import 'mixins';
+@import 'grid';
+//@import 'navigation';
+@import 'typography';
+//@import 'elements';
+
+body {
+	color: $gray;
+	margin: 0;
+	padding: 0;
+	background: url(../images/wood_bg.jpg) center center;
+	background-size: cover;
+	height: 100vh;
+//	width: 100%;
+}
+
+#main {
+	display: block;
+	background: url(../images/notebook-desktop.png) top center no-repeat;
+	
+	@include mobile {
+		background: url(../images/notebook-mobile.png) top center no-repeat;
+		padding-bottom: 50px;
+				
+	}
+}
+
+#masthead {
+	@include mobile {
+		padding-top: 70px;
+		padding-left: 0px;
+	}
+}
+
+#content {
+	@include mobile {
+		padding-left: 0px;
+	}
+}
+
+.header {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	
+	@include mobile {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+sup {
+	font-size: .6em;
+}
+
+.phillips-logo {
+	display: block;
+	float: left;
+	padding-left: 30px;
+	
+	@include mobile {
+		padding-left: 10px;
+	}
+	
+	img {
+		height: 88px;
+		width: 88px;
+
+		@include mobile {
+			height: 60px;
+			width: 60px;
+		}
+	}
+//
+//	h1 {
+//		margin: 0;
+//		padding: 0;
+//	}
+}
+
+.slogan {
+	display: block;
+	float: left;
+	padding: 0 0 0 15px;
+	width: 320px;
+	
+	@include mobile {
+		width: 220px;
+		padding-left: 8px;
+	}
+
+	h2 {
+		color: $blue;
+	  margin: 0;
+	  padding: 20px 0 0 0;
+		@include font-size(25px);
+	  line-height: 1em;
+	  font-family: $avant;
+		font-weight: 400 !important;
+		text-transform: uppercase;
+		
+		@include mobile {
+			padding-top: 15px;
+			font-size: 18px;
+		}
+	}
+}
+
+#content {
+	margin-right: -10px;
+	padding-right: 10px;
+}
+
+#overview {
+//	margin-top: 0;
+	padding-top: 0;
+	padding-right: 20px;
+	padding-bottom: 5px;
+//	margin-right: -20px;
+//	margin-bottom: 0;
+	margin: 0 -20px 0 $gutter;
+	color: $gray;
+	@include font-size(14px);
+	font-family: $avant;
+	background: url(../images/lines.png) top left repeat-x;
+	
+	@include mobile {
+		margin-left: 0;
+		padding-bottom: 0;
+		background: url(../images/lines-mo.png) top left repeat-x;
+	}
+	
+//	@include narrow {
+//		background: url(../images/lines-mo.png) top left repeat-x;
+//	}
+	
+	p.overview {
+		margin: 0 0 18px 0;
+		padding: 0 6px 0 30px;
+		text-align: justify;
+		letter-spacing: -1px;
+		color: $gray;
+		
+		@include mobile {
+			letter-spacing: -.5px;
+			padding-left: 10px;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			margin-bottom: 10px;
+		}
+	}
+	
+	span {
+		color: $orange;
+	}
+	
+	h3 {
+		color: $blue;
+		font-size: 18px;
+	  line-height: 1.25em;
+	  margin: 0;
+	  padding: 0 0 0 60px;
+		font-weight: normal !important;
+		
+		@include mobile {
+			padding-left: 30px;
+			
+		}
+	}
+}
+
+#form {
+	margin-top: 0;
+	margin-left: 10px;
+	margin-bottom: 0;
+	padding-top: 20px;
+	padding-left: 10px;
+	background: url(../images/paper-shadow.png) top left no-repeat;
+	
+	@include mobile {
+		margin-top: 5px;
+		margin-left: 20px;
+		padding-left: 0;
+		padding-top: 8px;
+		background: url(../images/paper-shadow-mo.png) top left no-repeat;
+	}
+	
+	.heading {
+		color: $orange;
+		@include font-size(16px);
+		font-family: $tex;
+		font-weight: 700;
+		padding-left: 60px;
+		padding-right: 30px;
+		margin-top: 5px;
+		margin-bottom: 17px;
+		line-height: 24px;
+		
+		@include mobile {
+			padding-left: 20px;
+			font-size: 12px;
+			font-weight: bold;
+			font-family: $avant-book;
+			line-height: 16px;
+			margin-bottom: 8px;
+		}
+	}
+	
+	form {
+		display: block;
+		margin: 0 0 25px 0;
+		
+		@include mobile {
+			margin-bottom: 18px;
+		}
+	}
+	
+	fieldset {
+		border: none;
+		padding: 0 30px 0 58px;
+		background: url(../images/orange-arrows.png) top left no-repeat;
+		
+		@include mobile {
+			padding-left: 18px;
+			background: url(../images/orange-arrows-mo.png) top left no-repeat;
+		}
+	}
+	
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"] {
+		width: 92.5%;
+		clear: both;
+		display: block;
+		padding: 10px 6px 5px 10px;
+		margin: 0 0 15px 0;
+		font-family: $avant-book;
+		background: #d1d1d0;
+		border: none;
+		@include font-size(12px);
+		line-height: 12px;
+		@include appearance(none);
+		
+		@include mobile {
+			font-size: 11px;
+			padding: 5px 5px 0 5px;
+		}
+	}
+	
+	input[type="tel"] {
+		margin-bottom: 0;
+	}
+	
+	input[type="submit"] {
+		color: #fff;
+		float: right;
+		margin-top: 7px;
+		margin-right: 12px;
+		clear: right;
+		text-transform: uppercase;
+		padding: 5px 20px 2px 20px;
+		border-radius: 12px;
+		border-color: #305792 #5a7dac #5a7dac #305792;
+		@include background-gradient(#6385b1,#1f498a);
+		font-family: $avant-book;
+		@include appearance(none);
+		@include border-radius(6px);
+	}
+	
+	.required {
+		@include font-size(8px);
+		color: $gray;
+		float: left;
+		margin: 3px 0 0 0;
+		font-face: $avant;
+		
+		@include mobile {
+			font-size: 9px;
+		}
+	}
+}
+
+#signature {
+	overflow: hidden;
+	padding-bottom: 35px;
+	
+	@include mobile {
+		padding-bottom: 28px;
+	}
+	
+	.photo {
+		display: block;
+		float: left;
+		padding-left: 60px;
+	}
+	
+	.contact {
+		display: block;
+		float: left;
+	}
+	
+	.contact-me {
+		color: $gray;
+		font-size: 12px;
+		line-height: 12px;
+		font-family: $avant;
+		padding-left: 20px;
+		margin-bottom: 5px;
+		
+		@include mobile {
+			margin-bottom: 2px;
+		}
+	}
+	
+	.contact-info {
+		@include font-size(15px);
+		line-height: 15px;
+		margin-bottom: 0;
+		font-family: $avant;
+		padding-left: 20px;
+		color: $blue;
+		font-weight: bold;
+		
+		@include mobile {
+			font-size: 13px;
+		}
+	}
+	
+	.signature {
+		padding-top: 10px;
+		padding-left: 20px;
+	}
+	
+	.contact-name {
+		color: $blue;
+		@include font-size(12px);
+		line-height: 18px;
+		font-family: $avant;
+		padding-left: 20px;
+		margin: -12px 0 0 0;
+	}
+	
+	.contact-pos {
+		color: $gray;
+		@include font-size(10px);
+		font-family: $avant;
+		font-style: italic;
+		margin: -5px 0 0 20px;
+	}
+}
+
+#legal {
+	margin-top: -20px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	
+	p {
+		color: #555;
+		font-size: 8px;
+		line-height: 11px;
+		font-family: $avant;
+		margin: 0 0 20px 0;
+		
+		@include mobile {
+			
+			line-height: 11px;
+		}
+	}
+//	
+//	p:last-child {
+//		margin-bottom: 20px;
+//	}
+}

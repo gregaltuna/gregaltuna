@@ -1,0 +1,251 @@
+// EM/REM FALLBACK appended with EMs: http://zerosixthree.se/
+@function calculateEm($size) {
+  $emSize: $size / 16px;
+  @return $emSize * 1em;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateEm($size);
+  font-size: calculateRem($size);
+}
+
+// VERTICALLY AND HORIZONTALLY CENTER A RELATIVE POSITIONED ELEMENT
+@mixin relativecenter {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0 auto;
+}
+
+
+// VERTICALLY and/or HORIZONTALLY CENTERS AN ABSOLUTE POSITIONED ELEMENT
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
+
+@mixin centerCancel {
+	top: inherit !important;
+	right: inherit !important;
+	bottom: inherit !important;
+	left: inherit !important;
+	position: inherit !important;
+	-webkit-transform: none !important;
+	-moz-transform: none !important;
+	-o-transform: none !important;
+	transform: none !important;
+}
+
+// BORDER RADIUS
+@mixin border-radius($radius:.25em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin circle($size) {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - #{$size/2});
+  top: calc(50% - #{$size/2});
+  width: $size;
+  height: $size;
+}
+
+
+@mixin circles($border: 10px, $outer: red, $middle: blue, $innermost: green) {
+  // outer circle
+  border: $border solid transparent;
+  border-top-color: $outer;
+  border-radius: 50%;
+  @include animation(spin 1.8s linear infinite);
+
+  // middle circle
+  &:before {
+    content: "";
+    position: absolute;
+    top: $border;
+    left: $border;
+    right: $border;
+    bottom: $border;
+    border: $border solid transparent;
+    border-top-color: $middle;
+    border-radius: 50%;
+    @include animation(reverse-spin 1.4s linear infinite);
+  }
+
+  // innermost circle
+  &:after {
+    content: "";
+    position: absolute;
+    top: $border * 3;
+    left: $border * 3;
+    right: $border * 3;
+    bottom: $border * 3;
+    border: $border solid transparent;
+    border-top-color: $innermost;
+    border-radius: 50%;
+    @include animation(spin 1.8s linear infinite);
+  }
+}
+
+@mixin box-shadow ($param) {
+-webkit-box-shadow: $param;
+   -moz-box-shadow: $param;
+        box-shadow: $param;
+}
+
+@mixin bg-clip ($b) {
+@if $b == border-box {
+	-webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+	   -moz-background-clip: border;     /* Firefox 3.6 */
+		    background-clip: $b;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+
+@else if $b == padding-box {
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+     -moz-background-clip: padding;     /* Firefox 3.6 */
+  	    background-clip: $b;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+
+@else if $b == content-box {
+	-webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+	  -moz-background-clip: content;     /* Firefox 3.6 */
+		    background-clip: $b;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+	}
+}
+
+// COLORS with TRANSPARENCY
+@mixin transBg ($color, $opacity) {
+	background-color: $color;
+	background-color: rgba($color, $opacity);
+}
+
+@mixin transColor ($color, $opacity) {
+	color: $color;
+	//-moz-opacity: $opacity;
+	color: rgba($color, $opacity);
+}
+
+@mixin transBorder ($color, $opacity) {
+	border-color: $color;
+	border-color: rgba($color, $opacity);
+}
+
+// TRANSITIONS
+// usage:
+//		a {
+//			color: gray;
+//			@include transition(color .3s ease);
+//				&:hover {
+//					color: black;
+//				}	
+//		}	
+//
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// CROSS-BROWSER OPACITY
+// usage:
+//		.faded-text {
+//			@include opacity(0.8);
+//		}
+//
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// CLEARFIX
+// sass:
+//		.your-container-with-floated-children {
+//			@extend %clearfix;
+//		}
+//
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+// VISUALLY HIDE AN ELEMENT (use instead of display: none; for better accessibility
+// usage:
+//		<b class="visually-hidden">Open the navigation</b>
+//
+// sass:
+//		.visually-hidden {
+//			@extend %visuallyhidden;
+//		}
+//
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// MAKIN' A CIRCLEO OUT OF SOMETHING
+
+@mixin circle($size, $color, $display) {
+	display: $display;
+	line-height: $size;
+	width: $size;
+	height: $size;
+	background: $color;
+	-webkit-border-radius: $size/2;
+		 -moz-border-radius: $size/2;
+					border-radius: $size/2;
+}
+
+// TEXT SHADOW
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+@mixin square($size) {
+	width: $size;
+	height: $size;
+	display: block;
+	overflow: inherit;
+}

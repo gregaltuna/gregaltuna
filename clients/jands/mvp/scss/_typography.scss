@@ -1,0 +1,242 @@
+// Google fonts
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Montserrat:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300|Open+Sans+Condensed:300,700);
+//@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Michroma);
+
+// Styles
+html {	
+	@media (max-width: 739px) {
+		font-size: 13px;
+	}
+	
+	@media (min-width: 740px) and (max-width: 979px) {
+		font-size: 13px;
+	}
+	
+	@media (min-width: 980px) and (max-width: 1219px) {
+		font-size: 15px;
+	}
+	
+	@media (min-width: 1220px) {
+		font-size: 16px;
+	}
+}
+
+/* ------------------------------------------------------------------------------------------------ [ TYPOGRAPHY ] ----- */
+body {
+	width: 100%;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-weight: $less-bold;
+  font-family: "Open Sans", Verdana, Arial, sans-serif;
+}
+
+h1 {
+	@include font-size(72px);
+  line-height: 1em;
+  margin: 0;
+  font-family: "Open Sans Condensed", Verdana, Arial, sans-serif;
+}
+
+h2 {
+	@include font-size(32px);
+  line-height: 1em;
+  margin: 30px 0 15px 0;
+}
+
+h3 {
+	@include font-size(30px);
+  line-height: 1.25em;
+  margin-top: 57px;
+  margin-bottom: 19px;
+}
+
+#zone-content h3 {
+	@include font-size(30px);
+  line-height: 1.25em;
+}
+
+h4 {
+	@include font-size(24px);
+  line-height: 1.35em;
+  margin-top: 52px;
+  margin-bottom: 13px;
+  color: #888;
+}
+
+h5 {
+	@include font-size(18px);
+  line-height: 24px;
+  margin-top: 36px;
+  margin-bottom: 9px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $gold;
+  letter-spacing: normal;
+  font-weight: normal;
+}
+
+h2 {
+	font-weight: normal !important;
+}
+
+h3 {
+	font-weight: normal !important;
+}
+
+p, ul, ol, pre, table, blockquote {
+	color: #fff;
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-size: 1.15em;
+  color: #efefef;
+}
+
+p {
+	line-height: 1.75em;
+}
+
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+	line-height: 1.35em;
+	margin: 0 0 .75em 0;
+	
+	.smaller & {
+		font-size: .9em !important;
+		line-height: 1.5em;
+	}
+}
+
+b, strong, em, small, code {
+  line-height: 1;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: 0.4em;
+}
+
+.title {
+	margin-top: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------ [ OTHER TYPO ] ----- */
+.content {
+	
+	ul, ol {
+		padding-left: 25px;
+		
+		li {
+			margin: 0 0 .65em 0;
+			line-height: 1.35em;
+		}
+	}
+	
+	ul.menu {
+		padding-left: 0;
+	}
+}
+
+a, a:link, a:active, a:visited {
+	color: #eee;
+}
+
+a:hover, a:focus {
+	color: #b51016;
+	text-decoration: underline;
+}
+
+.caps { text-transform: uppercase; }
+
+.center { text-align: center; }
+
+.bold {
+	font-weight: 700;
+	letter-spacing: .025em;
+}
+
+.red-star {
+	font-family: "Montserrat", verdana, arial, sans-serif;
+	font-weight: normal;
+	color: #c00;
+}
+
+.tooltip {
+	border: dashed 1px #ccc;
+	border-width: 0 0 1px 0;
+	background: #fbfbe5;
+	padding: 2px 0;
+	position: relative;
+}
+
+.tooltip span {
+	display: none;
+	position: absolute;
+	top: 125%;
+	background: #fbfbe5;
+	font-size: .8em;
+	line-height: 1.35em;
+}
+
+.tooltip:hover {
+	cursor: hand !important;
+}
+
+.tooltip:hover span,
+.tooltip:focus span {
+	display: block;
+	width: 250px;
+	padding: 10px;
+	z-index: 1000;
+}
+
+.caption,
+.table-notes {
+	font-size: .7em;
+	line-height: 1.35em;
+	margin: -15px 0 10px 0;
+	color: #999;
+	font-style: italic;
+}
+
+.caption {
+	margin: 3px 0 0 0;
+}
+
+.video .caption {
+	margin: 18px 0 0 -7px;
+}
+
+.border {
+	border: solid 3px #eee;
+}
+
+.no-border {
+	border: none !important;
+}
+
+.grid-3.left-sidebar h2.block-title,
+.grid-3.right-sidebar h2.block-title,
+.block-menu h3.block-title,
+.gallery-title {
+	font-size: 18px ;
+	line-height: 26px;
+	margin-top: 1em;
+	margin-bottom: .75em;
+}

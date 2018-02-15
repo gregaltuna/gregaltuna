@@ -1,0 +1,209 @@
+.btn {
+	display: block;
+	margin: 3em 0 0 0;
+	
+	a {
+		//@include font-size(14px);
+		@include font-size(12px);
+		line-height: 1.35em;
+		font-family: $open-sans;
+		font-weight: normal;
+		border: solid 2px;
+		//padding: 11px 25px 10px 25px;
+		padding: 8px 20px 7px 20px;
+		//@include border-radius(5px);  // FOR A BORDER RADIUS ON THE BOX
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 600;
+		
+		@media (max-width:767px) {
+			@include font-size(14px);
+			padding: 11px 20px 10px 20px !important;
+		}
+	}
+
+	&.btn1 {
+	
+		&.white a {
+			color: #fff !important;
+			border-color: #fff;
+			
+			&:hover {
+				color: #333 !important;
+				background-color: #fff;
+			}
+		}
+		
+		&.green1 a {
+			color: $green1 !important;
+			border-color: $green1;
+			
+			&:hover {
+				color: #fff !important;
+				background-color: $green1;
+			}
+		}
+		
+		&.green2 a {
+			color: $green2 !important;
+			border-color: $green2;
+			
+			&:hover {
+				color: #333 !important;
+				background-color: $green2;
+			}
+		}
+
+		&.orange a {
+			color: $orange !important;
+			border-color: $orange;
+			
+			&:hover {
+				color: #333 !important;
+				background-color: $orange;
+			}
+		}
+
+		&.brown1 a {
+			color: $brown1 !important;
+			border-color: $brown1;
+			
+			&:hover {
+				color: #fff !important;
+				background-color: $brown1;
+			}
+		}
+	}
+	
+	&.btn2 {
+	
+		&.white a {
+			color: #000 !important;
+			border-color: #fff;
+			background-color: #fff;
+			
+			&:hover {
+				color: #fff !important;
+				background-color: transparent;
+			}
+		}
+		
+		&.green1 a {
+			color: #fff !important;
+			border-color: $green1;
+			background-color: $green1;
+			
+			&:hover {
+				color: $green1 !important;
+				background-color: transparent;
+			}
+		}
+		
+		&.green2 a {
+			color: #fff !important;
+			border-color: $green2;
+			background-color: $green2;
+			
+			&:hover {
+				color: $green2 !important;
+				background-color: transparent;
+			}
+		}
+
+		&.orange a {
+			color: #fff !important;
+			border-color: $orange;
+			background-color: $orange;
+			
+			&:hover {
+				color: $orange !important;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.btn3 {
+	
+		&.white a {
+			color: #000 !important;
+			border-color: #fff;
+			background-color: #fff;
+			
+			&:hover {
+//				color: #fff !important;
+				@include transBg(#ffffff,.5);
+			}
+		}
+		
+		&.green1 a {
+			color: #fff !important;
+			border-color: $green1;
+			background-color: $green1;
+			
+			&:hover {
+//				color: #fff !important;
+				@include transBg($green1,.5);
+			}
+		}
+		
+		&.green2 a {
+			color: #fff !important;
+			border-color: $green2;
+			background-color: $green2;
+			
+			&:hover {
+//				color: $green2 !important;
+				@include transBg($green2,.5);
+			}
+		}
+
+		&.orange a {
+			color: #fff !important;
+			border-color: $orange;
+			background-color: $orange;
+			
+			&:hover {
+//				color: $orange !important;
+				@include transBg($orange,.5);
+			}
+		}
+	}
+}
+
+.btn-group {
+	width: 100%;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	
+	.btn {
+		margin: 0 .5em;
+		display: inline-block;
+		
+		@media (max-width:767px) {
+			margin-bottom: 1em;
+		}
+	}
+}
+
+// FADED LINE SEPARATOR
+.faded-line {
+	width: 100%;
+	height: 3px;
+	line-height: 3px;
+	margin: 3em 0;
+	clear: both;
+	display: block;
+	text-align: center;
+	
+	img {
+		opacity: .5;
+	}
+}
+
+// CONTEXTUAL MENU LINKS FIX
+#zone-content .contextual-links li {
+  line-height: inherit;
+  margin: 0 !important;
+}

@@ -1,0 +1,254 @@
+// Google fonts
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Montserrat:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300|Open+Sans+Condensed:300,700);
+//@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto+Condensed:400,700,300);
+
+@font-face {
+    font-family: 'Avant Garde Medium Condensed';
+    src: url('../fonts/ITCAvantGardeStd-MdCn.eot');
+    src: url('../fonts/ITCAvantGardeStd-MdCn.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ITCAvantGardeStd-MdCn.woff') format('woff'),
+        url('../fonts/ITCAvantGardeStd-MdCn.ttf') format('truetype'),
+        url('../fonts/ITCAvantGardeStd-MdCn.svg#ITCAvantGardeStd-MdCn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avant Garde Book';
+    src: url('../fonts/ITCAvantGardeStd-Bk.eot');
+    src: url('../fonts/ITCAvantGardeStd-Bk.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ITCAvantGardeStd-Bk.woff') format('woff'),
+        url('../fonts/ITCAvantGardeStd-Bk.svg#ITCAvantGardeStd-Bk') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TeX Gyre Adventor';
+    src: url('../fonts/texgyreadventor-regular-webfont.eot');
+    src: url('../fonts/texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/texgyreadventor-regular-webfont.woff') format('woff'),
+        url('../fonts/texgyreadventor-regular-webfont.svg#texgyreadventor-regular-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// Styles
+html {	
+	@include mobile {
+		font-size: 13px;
+	}
+	
+	@include narrow {
+		font-size: 15px;
+	}
+	
+	@include normal {
+		font-size: 16px;
+	}
+}
+
+/* ------------------------------------------------------------------------------------------------ [ TYPOGRAPHY ] ----- */
+body {
+	width: 100%;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-weight: normal;
+  font-family: $avant, Verdana, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+//	color: $brown2;
+  letter-spacing: normal;
+  font-weight: normal;
+}
+
+h1 {
+	@include font-size(62px);
+  line-height: 1em;
+  margin: 0 0 .5em 0;
+  font-family: $avant, Verdana, Arial, sans-serif;
+}
+
+h2 {
+	@include font-size(25px);
+  line-height: 1em;
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 400 !important;
+	text-transform: uppercase;
+  font-family: $avant, Verdana, Arial, sans-serif;
+}
+
+h3 {
+	@include font-size(32px);
+  line-height: 1.25em;
+  margin-top: 57px;
+  margin-bottom: 19px;
+	font-weight: normal !important;
+}
+
+h4 {
+	@include font-size(24px);
+  line-height: 1.35em;
+  margin-top: 52px;
+  margin-bottom: 13px;
+}
+
+h5 {
+	@include font-size(20px);
+  line-height: 24px;
+  margin-top: 36px;
+  margin-bottom: 9px;
+  font-weight: bold;
+}
+
+p, ul, ol, pre, table, blockquote {
+//	color: #fff;
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-size: 1.15em;
+//  color: #efefef;
+}
+
+p {
+	line-height: 1.75em;
+}
+
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+	line-height: 1.35em;
+	margin: 0 0 .75em 0;
+	
+	.smaller & {
+		font-size: .9em !important;
+		line-height: 1.5em;
+	}
+}
+
+b, strong, em, small, code {
+  line-height: 1;
+}
+
+sup {
+  vertical-align: super;
+  font-size: .9em;
+  position: relative;
+}
+
+sub {
+  vertical-align: baseline;
+  position: relative;
+}
+
+.title {
+	margin-top: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------ [ OTHER TYPO ] ----- */
+.content {
+	
+	ul, ol {
+		padding-left: 25px;
+		
+		li {
+			margin: 0 0 .65em 0;
+			line-height: 1.35em;
+		}
+	}
+	
+	ul.menu {
+		padding-left: 0;
+	}
+}
+
+#{$a-tags} {
+//	color: $green3;
+	color: #333;
+}
+
+#{$a-tags-hover} {
+	color: #000;
+	text-decoration: underline;
+}
+
+.caps { text-transform: uppercase; }
+
+.center { text-align: center; }
+
+.bold {
+	font-weight: 700;
+	letter-spacing: .025em;
+}
+
+.red-star {
+	font-family: $open-sans;
+	font-weight: normal;
+	color: #c00;
+}
+
+.tooltip {
+	border: dashed 1px #ccc;
+	border-width: 0 0 1px 0;
+	background: #fbfbe5;
+	padding: 2px 0;
+	position: relative;
+}
+
+.tooltip span {
+	display: none;
+	position: absolute;
+	top: 125%;
+	background: #fbfbe5;
+	font-size: .8em;
+	line-height: 1.35em;
+}
+
+.tooltip:hover {
+	cursor: hand !important;
+}
+
+.tooltip:hover span,
+.tooltip:focus span {
+	display: block;
+	width: 250px;
+	padding: 10px;
+	z-index: 1000;
+}
+
+.caption,
+.table-notes {
+	font-size: .7em;
+	line-height: 1.35em;
+	margin: -15px 0 10px 0;
+	color: #999;
+	font-style: italic;
+}
+
+.caption {
+	margin: 3px 0 0 0;
+}
+
+.video .caption {
+	margin: 18px 0 0 -7px;
+}
+
+.border {
+	border: solid 3px #eee;
+}
+
+.no-border {
+	border: none !important;
+}

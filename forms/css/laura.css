@@ -1,0 +1,51 @@
+
+fieldset {
+	border: none;
+}
+
+legend {
+	color: white;
+	background-color: #72b844;
+	width: 100%;
+	padding: 10px;
+}
+
+ul.radio label {
+	display: inline;
+	font-weight: normal;
+}
+
+label {
+	line-height: 1em;
+	font-size: 0.9em;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+em {
+	display: block;
+	font-size: 0.7em;
+}
+
+ul li {
+	list-style: none;
+}
+
+#btn-wrapper {
+	width: 100%;
+	text-align: center;
+}
+
+#btnContinue {
+	color: white;
+	background-color: #72b844;
+	width: 100px;
+	padding: 5px;
+}
+
+.tiled {
+	display: block;
+	float: left;
+	padding: 10px;
+}

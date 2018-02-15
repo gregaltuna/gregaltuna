@@ -1,0 +1,162 @@
+// Google fonts
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Montserrat:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300|Open+Sans+Condensed:300,700);
+//@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+
+// Styles
+html {	
+	@include mobile {
+		font-size: 13px;
+	}
+	
+	@include narrow {
+		font-size: 14px;
+	}
+	
+	@include normal {
+		font-size: 14px;
+	}
+	
+	@include wide {
+		font-size: 14px;
+	}
+}
+
+/* ------------------------------------------------------------------------------------------------ [ TYPOGRAPHY ] ----- */
+body {
+	width: 100%;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-family: "Open Sans", Verdana, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: normal;
+  font-weight: normal;
+}
+
+h1 {
+	@include font-size(62px);
+  line-height: 1em;
+  margin: 0 0 .5em 0;
+}
+
+h2 {
+	@include font-size(52px);
+  line-height: 1em;
+  margin: 30px 0 .5em 0;
+	font-weight: 400 !important;
+}
+
+h3 {
+	@include font-size(32px);
+  line-height: 1.25em;
+  margin-top: 57px;
+  margin-bottom: 19px;
+	font-weight: normal !important;
+}
+
+h4 {
+	@include font-size(24px);
+  line-height: 1.35em;
+  margin-top: 52px;
+  margin-bottom: 13px;
+}
+
+h5 {
+	@include font-size(20px);
+  line-height: 24px;
+  margin-top: 36px;
+  margin-bottom: 9px;
+  font-weight: bold;
+}
+
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+p {
+	line-height: 1.75em;
+}
+
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+	line-height: 1.35em;
+	margin: 0 0 .75em 0;
+	
+	.smaller & {
+		font-size: .9em !important;
+		line-height: 1.5em;
+	}
+}
+
+b, strong, em, small, code {
+  line-height: 1;
+}
+
+sup {
+  vertical-align: super;
+  font-size: .8em;
+  position: relative;
+}
+
+sub {
+  vertical-align: baseline;
+  position: relative;
+}
+
+.title {
+	margin-top: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------ [ OTHER TYPO ] ----- */
+.content {
+	
+	ul, ol {
+		padding-left: 25px;
+		
+		li {
+			margin: 0 0 .65em 0;
+			line-height: 1.35em;
+		}
+	}
+	
+	ul.menu {
+		padding-left: 0;
+	}
+}
+
+#{$a-tags} {
+	color: #666;
+}
+
+#{$a-tags-hover} {
+	color: #181818;
+	text-decoration: underline;
+}
+
+.caps { text-transform: uppercase; }
+
+.center { text-align: center; }
+
+.bold {
+	font-weight: 700;
+	letter-spacing: .025em;
+}
+
+.red-star {
+	font-family: $open-sans;
+	font-weight: normal;
+	color: #c00;
+}

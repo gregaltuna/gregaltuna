@@ -1,0 +1,127 @@
+// SKIP LINKS
+#skip {
+	a, a:visited {
+		position: absolute;
+		display: block;
+		left: 0;
+		top: -500px;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		text-align: center;
+		background-color: #006a31;
+		color: white;
+	}
+
+	a:hover,
+	a:active,
+	a:focus {
+		position: static;
+		width: 100%;
+		height: auto;
+		padding: 5px 0 7px 0;
+	}
+}
+
+// STYLES THE PRIMARY TABS
+//div.tabs {
+//	position: fixed;
+//	bottom: 0px;
+//	width: 100%;
+//	overflow: hidden;
+//	padding: 3px 0 5px 0;
+//	text-align: center;
+//	@include center($xy:x);
+//	@include transBg(#000000,.75);
+//	z-index: 499;
+//
+//	ul.primary {
+//		margin: 0;
+//		padding: 0;
+//		border: none;
+//		display: block;
+//
+//		li {
+//			margin: 0;
+//			padding: 0;
+//			border: none;
+//			line-height: 1em;
+//			display: inline-block;
+//			text-transform: uppercase;
+//
+//			#{$a-tags} {
+//				color: #fff;
+//				margin: 0 .25em;
+//				padding: 3px 12px 2px 12px;
+//				background: transparent;
+//				font-size: 10px;
+//				letter-spacing: 1px;
+//				border: solid 1px #fff;;
+//				display: block;
+//				font-family: $copy;
+//				text-decoration: none; 
+//
+//				&.active {
+//					background: $red2;
+//					 
+//					 a {
+//						 color: #fff;
+//					 }
+//				}
+//			}
+//
+//			#{$a-tags-hover} {
+//				color: #000;
+//				background: #fff;
+//			}
+//		}
+//	}
+//}
+
+// PROVIDES A CHEVRON AND CIRCLE
+//.scroll-down {
+//  position: absolute;
+//  left: 50%;
+//  margin-left: -25px;
+//  margin-top: -250px;
+//  color: #ffffff !important;
+//  border: 2px solid #ffffff !important;
+//  font-size: 1.25em;
+//  width: 40px;
+//  height: 40px;
+//  line-height: 40px;
+//  text-align: center;
+//  border-radius: 50%;
+//  -o-border-radius: 50%;
+//  -ms-border-radius: 50%;
+//  -moz-border-radius: 50%;
+//  -webkit-border-radius: 50%;
+//  background-clip: padding-box;
+//  z-index: 1;
+//  -webkit-transition: all 0.3s ease-out;
+//  -moz-transition: all 0.3s ease-out;
+//  -o-transition: all 0.3s ease-out;
+//  -ms-transition: all 0.3s ease-out;
+//  transition: all 0.3s ease-out;
+//  bottom: 20px;
+//  text-decoration: none !important;
+//
+//	@media (max-width:767px) {
+//		display: none;
+//	}
+//
+//	&:hover {
+//	//.scroll-down:focus {
+//		color: $green !important;
+//		border-color: $green !important;
+//		background-color: $purple;
+//	}
+//}
+//
+//.icon-angle-down:before {
+//  content: "\f107";
+//  font-size: 1.5em;
+//  font-family: 'FontAwesome';
+//  box-sizing: border-box;
+//  text-decoration: none;
+//}

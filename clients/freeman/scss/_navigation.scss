@@ -1,0 +1,47 @@
+// PROVIDES A CHEVRON AND CIRCLE
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -250px;
+  color: rgba($brown1, .5) !important;
+  border: 2px solid $brown1 !important;
+  border-color: rgba($brown1, .5) !important;
+  font-size: 1.25em;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-clip: padding-box;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  bottom: 20px;
+  text-decoration: none !important;
+
+	@media (max-width:767px) {
+		//display: none;
+	}
+}
+
+.scroll-down:hover {
+//.scroll-down:focus {
+	color: $green2 !important;
+	border-color: $green2 !important;
+}
+
+.icon-angle-down:before {
+  content: "\f107";
+  font-size: 1.5em;
+  font-family: 'FontAwesome';
+  box-sizing: border-box;
+  text-decoration: none;
+}

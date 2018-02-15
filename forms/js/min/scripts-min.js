@@ -1,0 +1,1 @@
+jQuery(window).load(function(){jQuery(".imagefit").imagefit(),jQuery(".fitvid").fitVids()});
